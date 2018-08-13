@@ -92,6 +92,16 @@ CUERPO DOCUMENTO
 
   if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
 
+    // IMPRIMO DATOS DEL USUARIO
+    //var_dump($_SESSION);
+
+    echo '<script>console.log("DATOS DEL CHATO")</script>';
+
+    foreach ($_SESSION as $key => $value) {
+      echo '<script>console.log("'.$value.'")</script>';
+    }
+
+
    echo '<div class="wrapper">';
 
     /*=============================================
@@ -110,8 +120,10 @@ CUERPO DOCUMENTO
     CONTENIDO
     =============================================*/
 
+    // si hay un GET
     if(isset($_GET["ruta"])){
 
+      // si es una ruta valida lo redirecciono
       if($_GET["ruta"] == "inicio" ||
          $_GET["ruta"] == "usuarios" ||
          $_GET["ruta"] == "categorias" ||
@@ -125,15 +137,27 @@ CUERPO DOCUMENTO
 
         include "modulos/".$_GET["ruta"].".php";
 
+      // si no es valida lo redirecciono a pagina error
       }else{
 
         include "modulos/404.php";
 
       }
 
+    // si no hay GET redirecciono al inicio o paguina defecto por rol
     }else{
 
-      include "modulos/inicio.php";
+      if($_SESSION["perfil"]=="Vendedor"){
+        echo '<script type="text/javascript">
+              window.location = "crear-venta"
+              </script>';
+      }
+
+      if($_SESSION["perfil"]=="Administrador"){
+        // pagina defecto solo para admin
+        include "modulos/inicio.php";
+      }
+
 
     }
 

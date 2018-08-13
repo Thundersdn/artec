@@ -34,6 +34,7 @@ require_once "../modelos/usuarios.modelo.php";
 
  		// NO REPETIR USUARIO
  		public  $validarUsuario;
+ 		
  		public function ajaxValidarUsuario(){
  			$item="usuario";
  			$valor= $this-> validarUsuario;

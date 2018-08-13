@@ -19,7 +19,7 @@
       <div class="box">
         <div class="box-header with-border">
           <a href="crear-venta">
-            <button class="btn btn-primary" data-toggle="modal"  data-target="#modalAgregarCategoria" title="Collapse">Agregar categoria</button>
+            <button class="btn btn-primary" data-toggle="modal"  data-target="#modalAgregarCategoria" title="Collapse">Nueva venta</button>
           </a>
         </div>
         <div class="box-body">
@@ -69,8 +69,12 @@
                           <td>
                             <div class="btn-group">
                               <button class="btn btn-primary btnImprimirFactura" codigoVenta="'.$value["codigo"].'"><i class="fa fa-print "></i></button>
-                              <button class="btn btn-warning btnEditarVenta"  idVenta='.$value["id"].'><i class="fa fa-pencil"></i></button>
-                              <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                              <button class="btn btn-warning btnEditarVenta"  idVenta='.$value["id"].'><i class="fa fa-pencil"></i></button>';
+                              if($_SESSION["perfil"]=="Administrador"){
+                                echo '
+                                      <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                              }
+                    echo'
                             </div>
                           </td>
                         </tr>

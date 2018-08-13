@@ -28,64 +28,105 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MODULOS</li>
         
-          <li>
-            <a href="inicio">
-              <i class="fa fa-home "></i> <span>Inicio</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                    <a href="inicio">
+                      <i class="fa fa-home fa-lg"></i> <span>Inicio</span>
+                    </a>
+                  </li>';
+            }
+          ?>          
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-usd " style="padding-left: 3px"></i> <span>Ventas</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"||$_SESSION["perfil"]=="Vendedor"){
+              echo '<li>
+                      <a href="ventas">
+                        <i class="fa fa-usd fa-lg" style="padding-left: 3px"></i> <span>Ventas</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-clipboard"></i> <span>Categorias</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"||$_SESSION["perfil"]=="Vendedor"){
+              echo '<li>
+                      <a href="crear-venta">
+                        <i class="fa fa-list-ol " style="padding-left: 0px"></i> <span>Nueva venta</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-user" style="padding-left: 2px"></i> <span>Usuarios</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"||$_SESSION["perfil"]=="Vendedor"){
+              echo '<li>
+                      <a href="categorias">
+                        <i class="fa fa-clipboard" style="padding-left: 0px"></i> <span>Categorias</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="usuarios">
+                        <i class="fa fa-user fa-lg" style="padding-left: 2px"></i> <span>Usuarios</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-shopping-cart"></i> <span>Productos</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="productos">
+                        <i class="fa fa-shopping-cart"></i> <span>Productos</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="inventario">
+                        <i class="fa fa-cubes"></i> <span>Invetario</span>
+                      </a>
+                    </li>';
+            }
+          ?> 
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-cubes"></i> <span>Invetario</span>
-            </a>
-          </li>
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="reportes">
+                        <i class="fa fa-line-chart"></i> <span>Reportes</span>
+                      </a>
+                    </li>';
+            }
+          ?>
 
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="entregas">
+                        <i class="fa fa-truck"></i> <span>Entregas</span>
+                      </a>
+                    </li>';
+            }
+          ?>
 
-          <li>
-            <a href="inicio">
-              <i class="fa fa-line-chart"></i> <span>Reportes</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="inicio">
-              <i class="fa fa-truck"></i> <span>Entregas</span>
-            </a>
-          </li>
-
-
-          <li>
-            <a href="inicio">
-              <i class="fa fa-users"></i> <span>Clientes</span>
-            </a>
-          </li>
-
+          <?php
+            if($_SESSION["perfil"]=="Administrador"){
+              echo '<li>
+                      <a href="inicio">
+                        <i class="fa fa-users"></i> <span>Clientes</span>
+                      </a>
+                    </li>';
+            }
+          ?>
 
       </ul>
     </section>
