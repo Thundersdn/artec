@@ -214,6 +214,9 @@ CREATE TABLE IF NOT EXISTS `ventas` (
   KEY `id_vendedor` (`id_vendedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ;
 
+INSERT INTO `ventas` (`id`,`codigo`,`id_cliente`,`id_vendedor`,`productos`,`impuesto`,`neto`,`total`,`metodo_pago`,`fecha`) VALUES
+(1,1000001,2,1,'[{"id":"6","descripcion":"Disco Punta Diamante ","cantidad":"1","stock":"3","precio":"1400","total":"1400"},{"id":"11","descripcion":"Motobomba a Gasolina","cantidad":"1","stock":"9000","precio":"4004","total":"4004"},{"id":"14","descripcion":"Disco de tugsteno para Sierra circular","cantidad":"1","stock":"20","precio":"6300","total":"6300"}]',2223.76,11704,13927.8,"TC-123",'2018-07-10 17:20:25'),
+(2,1000002,2,1,'[{"id":"12","descripcion":"Motobomba El","cantidad":"2","stock":"20","precio":"3360","total":"6720"},{"id":"15","descripcion":"Soldador Electrico ","cantidad":"1","stock":"20","precio":"2772","total":"2772"}]',2856.84,15036,17892.8,"TC-101",'2018-07-12 22:30:15');
 --
 -- Restricciones para tablas volcadas
 --
